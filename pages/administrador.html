@@ -35,7 +35,98 @@
     </header>
     <main class="container my-5">
         <h1 class="display-4 text-center">Administrador Series</h1>
+        <hr>
+        <section class="d-flex">
+            <p class="mb-0">Opciones</p>
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target=""><i class="bi bi-clipboard2-plus-fill"></i></button>
+        </section>
+        <section class="mt-5">
+            <h2 class="display-6">Lista de series</h2>
+            <hr>
+            <article class="table-responsive">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Cod.</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody id="listaSeries">
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Robotech</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quisquam.</td>
+                        <td>http</td>
+                        <td>Accion</td>
+                        <td>
+                            <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+                            <button class="btn btn-danger"><i class="bi bi-x-square-fill"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </article>
+        </section>
     </main>
+    <!-- modal para administrar series -->
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+                <label for="codigo">Codigo</label>
+                <input id="codigo" type="text" class="form-control" placeholder="123" maxlength="5" minlength="1">
+            </div>
+            <div class="mb-3">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" rows="4" class="form-control" placeholder="" maxlength="200" minlength=""></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="imagen">Imagen</label>
+                <input id="imagen" type="text" class="form-control" placeholder="123" maxlength="5" minlength="1">
+            </div>
+            <div class="mb-3">
+                <label for="genero">Genero</label>
+                <select id="genero" class="form-control">
+                    <option value="">Seleccione una opcion</option>
+                    <option value="accion">Accion</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedia">Comedia</option>
+                    <option value="aventura">Aventura</option>
+                </select>
+            </div>
+            <button class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
     <footer class="bg-dark text-light py-4 text-center">
         &copy;Todos los derechos reservados.
     </footer>
