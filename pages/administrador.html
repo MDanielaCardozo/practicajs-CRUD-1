@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Series">
-    <meta name="keywords" content="Series">
-    <meta name="author" content="Daniela Cardozo">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Series" />
+    <meta name="keywords" content="Series" />
+    <meta name="author" content="Daniela Cardozo" />
     <title>Series</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -14,125 +14,196 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-            <div class="container">
-              <a class="navbar-brand" href="index.html">Crunchy</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="administrador.html">Administrador</a>
-                  </li>
-                </ul>  
-              </div>
-            </div>
-          </nav>
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Crunchy</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="../index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="administrador.html">Administrador</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <main class="container my-5">
-        <h1 class="display-4 text-center">Administrador Series</h1>
-        <hr>
-        <section class="d-flex">
-            <p class="mb-0">Opciones</p>
-            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target=""><i class="bi bi-clipboard2-plus-fill"></i></button>
-        </section>
-        <section class="mt-5">
-            <h2 class="display-6">Lista de series</h2>
-            <hr>
-            <article class="table-responsive">
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">Cod.</th>
-                        <th scope="col">Titulo</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Imagen</th>
-                        <th scope="col">Genero</th>
-                        <th scope="col">Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody id="listaSeries">
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Robotech</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quisquam.</td>
-                        <td>http</td>
-                        <td>Accion</td>
-                        <td>
-                            <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-x-square-fill"></i></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </article>
-        </section>
+      <h1 class="display-4 text-center">Administrador Series</h1>
+      <hr />
+      <section class="d-flex">
+        <p class="mb-0">Opciones: </p>
+        <button
+          class="btn btn-outline-primary btn-sm ms-3"
+          data-bs-toggle="modal"
+          data-bs-target="#modalSerie"
+        >
+          <i class="bi bi-clipboard2-plus-fill"></i>
+        </button>
+      </section>
+      <section class="mt-5">
+        <h2 class="display-6">Lista de series</h2>
+        <hr />
+        <article class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Cod.</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="listaSeries">
+              <tr>
+                <th scope="row">1</th>
+                <td>Robotech</td>
+                <td class="text-truncate">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Adipisci, quisquam.
+                </td>
+                <td class="text-truncate">
+                  http://127.0.0.1:5501/pages/administrador.html
+                </td>
+                <td>Accion</td>
+                <td>
+                  <button class="btn btn-warning">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-x-square-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
     </main>
-    <!-- modal para administrar series -->
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-                <label for="codigo">Codigo</label>
-                <input id="codigo" type="text" class="form-control" placeholder="123" maxlength="5" minlength="1">
-            </div>
-            <div class="mb-3">
+    <!-- Modal para administrar series -->
+    <div
+      class="modal fade"
+      id="modalSerie"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Administrar serie
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formSerie">
+              <div class="mb-3">
+                <label for="codigo">Código</label>
+                <input
+                  id="codigo"
+                  type="text"
+                  class="form-control"
+                  placeholder="123"
+                  maxlength="5"
+                  minlength="1"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="titulo">Título</label>
+                <input
+                  id="titulo"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: Robotech"
+                  maxlength="60"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
                 <label for="descripcion">Descripción</label>
-                <textarea id="descripcion" rows="4" class="form-control" placeholder="" maxlength="200" minlength=""></textarea>
-            </div>
-            <div class="mb-3">
+                <textarea
+                  id="descripcion"
+                  rows="4"
+                  class="form-control"
+                  placeholder="Ej: Lorem ipsum dolor sit amet."
+                  maxlength="200"
+                  minlength="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
                 <label for="imagen">Imagen</label>
-                <input id="imagen" type="text" class="form-control" placeholder="123" maxlength="5" minlength="1">
-            </div>
-            <div class="mb-3">
-                <label for="genero">Genero</label>
+                <input
+                  id="imagen"
+                  type="text"
+                  class="form-control"
+                  placeholder="http://127.0.0.1:5501/pages/administrador.html"
+                  maxlength="120"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="genero">Género</label>
                 <select id="genero" class="form-control">
-                    <option value="">Seleccione una opcion</option>
-                    <option value="accion">Accion</option>
-                    <option value="drama">Drama</option>
-                    <option value="comedia">Comedia</option>
-                    <option value="aventura">Aventura</option>
+                  <option value="">Seleccione una opción</option>
+                  <option value="accion">Acción</option>
+                  <option value="drama">Drama</option>
+                  <option value="comedia">Comedia</option>
+                  <option value="aventura">Aventura</option>
                 </select>
-            </div>
-            <button class="btn btn-primary">Enviar</button>
-          </form>
+              </div>
+              <button class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
     <footer class="bg-dark text-light py-4 text-center">
-        &copy;Todos los derechos reservados.
+      &copy;Todos los derechos reservados.
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -140,5 +211,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/admin.js"></script>
-</body>
+  </body>
 </html>
