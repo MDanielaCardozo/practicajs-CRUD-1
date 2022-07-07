@@ -10,6 +10,7 @@ let descripcion = document.querySelector('#descripcion');
 let imagen = document.querySelector('#imagen');
 let genero = document.querySelector('#genero');
 let formulario = document.querySelector('#formSerie');
+let btnCrearSerie = document.querySelector('#btnCrearSerie');
 const modalAdminSerie = new bootstrap.Modal(document.getElementById('modalSerie'));
 console.log(modalAdminSerie);
 
@@ -22,6 +23,10 @@ codigo.addEventListener("blur", () => {
 })
 
 formulario.addEventListener('submit', crearSerie);
+btnCrearSerie.addEventListener('click', ()=>{
+    limpiarFormulario();
+    modalAdminSerie.show();
+})
 
 function crearSerie(e){
     e.preventDefault();
@@ -37,6 +42,7 @@ function crearSerie(e){
     //guardar lista de series
     guardarListaSeries();
     //cerrar modal que admonistra series
+    modalAdminSerie.hide();
 
 }
 
