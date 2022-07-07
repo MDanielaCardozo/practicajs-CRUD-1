@@ -14,7 +14,7 @@ let listaSeries = [];
 
 // agregar validaciones a cada campo
 
-formulario.addEventListener('submit', )
+formulario.addEventListener('submit', crearSerie);
 
 function crearSerie(e){
     e.preventDefault();
@@ -26,6 +26,7 @@ function crearSerie(e){
     listaSeries.push(nuevaSerie);
     console.log(listaSeries);
     // limpiar el formulario
+    limpiarFormulario();
 }
 
 function limpiarFormulario(){
