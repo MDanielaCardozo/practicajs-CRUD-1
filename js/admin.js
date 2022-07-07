@@ -43,6 +43,12 @@ function crearSerie(e){
     guardarListaSeries();
     //cerrar modal que admonistra series
     modalAdminSerie.hide();
+    //mostrar cartel a usuario
+    Swal.fire(
+        'Serie creada',
+        'La serie se agregó correctamente.',
+        'success'
+      )
 
 }
 
