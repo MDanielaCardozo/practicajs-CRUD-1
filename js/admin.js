@@ -20,7 +20,7 @@ let listaSeries = JSON.parse(localStorage.getItem('listaSeriesKey')) || [];
 // agregar validaciones a cada campo
 codigo.addEventListener("blur", () => {
     
-})
+});
 
 formulario.addEventListener('submit', crearSerie);
 btnCrearSerie.addEventListener('click', ()=>{
