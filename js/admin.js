@@ -112,16 +112,24 @@ window.borrarProducto = function (codigo){
   }).then((result) => {
     if (result.isConfirmed) {
       // borrar la serie listaSeries y tambien del localStorage
-
+      let listaSeriesNueva = listaSeries.filter((serie)=> {return serie.codigo != codigo } );
+      listaSeries = listaSeriesNueva;
+      guardarListaSeries();
+      console.log(listaSeriesNueva);
       // actualizar la tabla
-
+      borrarTabla();
+      cargaInicial();
       // mostrar cartel de operacion exitosa
       Swal.fire(
         'Serie eliminada',
         'La serie seleccionada fue exitosamente eliminada',
         'success'
-      )
+      );
     }
-  })
-  
+  });
+};
+
+function borrarTabla (){
+  let tbodySeries = document.querySelector('#listaSeries');
+  tbodySeries.innerHTML = '';
 }
