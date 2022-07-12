@@ -1,4 +1,5 @@
 import { Serie } from "./serieClass.js";
+import { generarCodigo } from "./codigoUnico.js";
 
 let nuevaSerie = new Serie(1, 'Robotech', 'lorem', 'url', 'accion');
 console.log(nuevaSerie);
@@ -18,8 +19,8 @@ console.log(modalAdminSerie);
 let listaSeries = JSON.parse(localStorage.getItem('listaSeriesKey')) || [];
 
 // agregar validaciones a cada campo
-codigo.addEventListener("blur", () => {
-    
+codigo.addEventListener('blur', () => {
+  generarCodigo()
 });
 
 formulario.addEventListener('submit', crearSerie);
@@ -76,10 +77,10 @@ function crearFila(itemSerie){
     // console.log(itemSerie);
     let tablaSeries = document.querySelector('#listaSeries'); //(+=) agrega!
     tablaSeries.innerHTML += `                                      
-  <tr>
+  <tr class = >
     <th scope="row">${itemSerie.codigo}</th>
     <td>${itemSerie.titulo}</td>
-    <td>
+    <td class ="text-truncate">
       ${itemSerie.descripcion}
     </td>
     <td>
