@@ -87,7 +87,7 @@ function crearFila(itemSerie){
     </td>
     <td>${itemSerie.genero}</td>
     <td>
-      <button class="btn btn-warning">
+      <button class="btn btn-warning" onclick="prepararEdicionSerie('${itemSerie.codigo}')">
         <i class="bi bi-pencil-square"></i>
       </button>
       <button class="btn btn-danger" onclick="borrarProducto('${itemSerie.codigo}')">
@@ -132,4 +132,20 @@ window.borrarProducto = function (codigo){
 function borrarTabla (){
   let tbodySeries = document.querySelector('#listaSeries');
   tbodySeries.innerHTML = '';
+};
+
+window.prepararEdicionSerie = function (codigoP) {
+  console.log(codigoP);
+  // cargar los datos de la serie a editar
+  let serieBuscada = listaSeries.find((serie)=>{return serie.codigo == codigoP});
+  console.log(serieBuscada.codigo);
+  // asignar los valores a cada input
+  codigo.value = serieBuscada.codigo;
+  titulo.value = serieBuscada.titulo;
+  descripcion.value = serieBuscada.descripcion;
+  imagen.value = serieBuscada.imagen;
+  genero.value = serieBuscada.genero;
+  
+  // mostrar formulario de la ventana modal
+  modalAdminSerie.show();
 }
