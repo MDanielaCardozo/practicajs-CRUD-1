@@ -20,7 +20,7 @@ let listaSeries = JSON.parse(localStorage.getItem('listaSeriesKey')) || [];
 
 // agregar validaciones a cada campo
 codigo.addEventListener('blur', () => {
-  generarCodigo()
+  generarCodigo();
 });
 
 formulario.addEventListener('submit', crearSerie);
@@ -31,7 +31,6 @@ btnCrearSerie.addEventListener('click', ()=>{
 
 //verificar si hay datos para dibujar en la tabla
 cargaInicial();
-
 
 function crearSerie(e){
     e.preventDefault();
@@ -91,9 +90,38 @@ function crearFila(itemSerie){
       <button class="btn btn-warning">
         <i class="bi bi-pencil-square"></i>
       </button>
-      <button class="btn btn-danger">
+      <button class="btn btn-danger" onclick="borrarProducto('${itemSerie.codigo}')">
         <i class="bi bi-x-square-fill"></i>
       </button>
     </td>
   </tr>`
+}
+
+window.borrarProducto = function (codigo){
+  console.log(codigo);
+  // preguntar al usuario si esta seguro de borrar
+  Swal.fire({
+    title: 'Esta seguro de eliminar la serie?',
+    text: "No puedes revertir este paso luego de aceptar",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Borrar',
+    cancelButtonText: 'Cancelar',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // borrar la serie listaSeries y tambien del localStorage
+
+      // actualizar la tabla
+
+      // mostrar cartel de operacion exitosa
+      Swal.fire(
+        'Serie eliminada',
+        'La serie seleccionada fue exitosamente eliminada',
+        'success'
+      )
+    }
+  })
+  
 }
