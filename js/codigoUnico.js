@@ -17,7 +17,8 @@ const generarId = () => {
         id = "";
     }
     console.log(arreglo);
-};
+    return arreglo[0];
+}
 
-generarId();
-};
+return generarId();
+}

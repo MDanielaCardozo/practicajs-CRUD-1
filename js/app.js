@@ -14,8 +14,15 @@ function crearColumna(serie){
             <img src="${serie.imagen}" class="card-img-top" alt="${serie.titulo}">
             <div class="card-body">
               <h5 class="card-title">${serie.titulo}</h5>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <button class="btn btn-primary" onclick='verDetalle(${serie.codigo})'>Ver detalle</button>
             </div>
           </div>
         </article>`
+}
+
+window.verDetalle = (codigo) =>{
+    console.log(codigo);
+    console.log(window.location);
+    console.log(window.location.origin+`/pages/detalle.html`);
+    window.location.href = window.location.origin+`/pages/detalle.html`;
 }

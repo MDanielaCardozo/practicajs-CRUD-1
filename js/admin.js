@@ -26,6 +26,7 @@ formulario.addEventListener('submit', guardarSerie);
 btnCrearSerie.addEventListener('click', ()=>{
     limpiarFormulario();
     modalAdminSerie.show();
+    document.getElementById('codigo').value = generarCodigo();
 });
 
 //verificar si hay datos para dibujar en la tabla
@@ -142,12 +143,12 @@ window.borrarProducto = function (codigo){
       );
     }
   });
-};
+}
 
 function borrarTabla (){
   let tbodySeries = document.querySelector('#listaSeries');
   tbodySeries.innerHTML = '';
-};
+}
 
 window.prepararEdicionSerie = function (codigoP) {
   console.log(codigoP);
@@ -166,7 +167,7 @@ window.prepararEdicionSerie = function (codigoP) {
   // aqui modifico la variable existeSerie para poder editar
   serieExistente = true;
   console.log(serieExistente);
-};
+}
 
 function guardarEdicionSerie (){
   // necesitamos la posicion de la serie dentro del arrglo
